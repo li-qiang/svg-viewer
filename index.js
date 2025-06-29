@@ -77,6 +77,7 @@
       wrapper.appendChild(container);
       overlay.appendChild(wrapper);
       document.body.appendChild(overlay);
+      document.body.style.overflow = 'hidden';
   
       // 拖动
       let isDragging = false;
@@ -109,6 +110,7 @@
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
           overlay.remove();
+          document.body.style.overflow = '';
           scale = 1;
           wrapper = null;
           overlay = null;
@@ -139,6 +141,7 @@
       }
       if (e.key === 'Escape' && overlay) {
         overlay.remove();
+        document.body.style.overflow = '';
         scale = 1;
         wrapper = null;
         overlay = null;
