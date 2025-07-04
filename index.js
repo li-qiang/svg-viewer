@@ -30,7 +30,7 @@
         cursor: grab;
       }
   
-      .svg-popup-container {
+            .svg-popup-container {
         background: white;
         padding: 20px;
         border-radius: 8px;
@@ -38,12 +38,39 @@
         max-height: 90vh;
         overflow: auto;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
-  
+
       .svg-popup-container svg {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        max-height: calc(90vh - 40px);
+        width: auto;
         height: auto;
+        object-fit: contain;
+      }
+
+      /* 改善滚动条样式 */
+      .svg-popup-container::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      .svg-popup-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 6px;
+      }
+
+      .svg-popup-container::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 6px;
+      }
+
+      .svg-popup-container::-webkit-scrollbar-thumb:hover {
+        background: #555;
       }
   
       svg.popup-enhanced.hover-cursor {
